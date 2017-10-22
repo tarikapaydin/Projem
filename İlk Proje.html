@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hazır Sözleşme</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    html {
+        background: url("./5.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    header {
+        color: black;
+    }
+
+    body {
+        color: black;
+        font-size: 25px;
+    }
+
+    select {
+        float: right;
+        padding: 7px;
+    }
+
+    div {
+        padding-bottom: 10px;
+    }
+
+    label {
+        vertical-align: middle;
+
+    }
+
+    input {
+        padding: 6px;
+        float: right;
+        padding-right: 5px;
+        padding-left: 2px;
+        border-radius: 7px;
+        border: solid 2px rgba(62, 117, 129, 0.541)
+    }
+
+    textarea {
+        vertical-align: middle;
+    }
+
+    #anadiv {
+        width: 80%;
+
+    }
+</style>
+
+<body>
+    <header style="font-size:40px;">Sözleşme Menüsü</header>
+    <div id="anadiv">
+
+
+        <fieldset style="float:left;" id="musteribilgileri">
+            <legend>Müşteri Bilgileri</legend>
+            <div>
+                <label>Müşteri No:</label>
+                <input type="text" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+            </div>
+            <div>
+                <label>Müşteri Adı:</label>
+                <input type="text" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+            </div>
+            <div>
+                <label>Gönderici Adresi:</label>
+                <textarea rows="3" cols="22"></textarea>
+            </div>
+            <div>
+                <label>Cep Tel. No:</label>
+                <input type="text" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+            </div>
+            <div>
+                <label>Tel.No:</label>
+                <input type="text" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+            </div>
+            <div>
+                <label>Posta Çeki:</label>
+                <input type="text" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+            </div>
+            <div>
+                <label>Vergi Dairesi/No:</label>
+                <input type="text" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="text" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+            </div>
+
+        </fieldset>
+
+
+        <div>
+            <fieldset id="szlozellikleri">
+                <legend>Sözleşme Özellikleri</legend>
+                <div>
+                    <label>Sözleşme Başlangıç Tarihi:</label>
+                    <input type="date" id="baslangicTarihi" size="7">
+                </div>
+                <div>
+                    <label>Sözleşme Bitiş Tarihi:</label>
+                    <input type="date" id="bitisTarihi" size="7">
+                </div>
+                <div>
+                    <label>Ücret Tarifesi Değişiklikleri:</label>
+                    <select>
+                        <option value="Yansıtılmayacak">Yansıtılmayacak</option>
+                        <option value="Yansıtılacak">Yansıtılacak</option>
+
+                    </select>
+
+                </div>
+                <div>
+                    <label>İndirim Oranı:</label>
+                    <select>
+                        <option value="Performansa Göre" selected>Performansa Göre</option>
+                        <option value="%10">%10</option>
+                        <option value="%15">%15</option>
+                        <option value="%20">%20</option>
+                        <option value="%25">%25</option>
+                        <option value="%30">%30</option>
+                        <option value="%35">%35</option>
+                        <option value="%40">%40</option>
+                        <option value="%45">%45</option>
+                        <option value="%50">%50</option>
+                        <option value="%55">%55</option>
+                        <option value="%60">%60</option>
+
+
+                    </select>
+
+                </div>
+                <div>
+                    <label>Gönderi Adedi Taahhüt Aylık/Yıllık:</label>
+                    <input type="text" size="5">
+                    <input type="text" size="5">
+                </div>
+                <div>
+                    <label>Faturalandırma Periyodu:</label>
+                    <select>
+                        <option value="Haftalık">HAFTALIK</option>
+                        <option value="Aylık">AYLIK</option>
+
+                    </select>
+                </div>
+                <div>
+                    <label>Ödeme Tipi:</label>
+                    <select>
+                        <option value="Mahsup">MAHSUP</option>
+                        <option value="Peşin">PEŞİN</option>
+
+                    </select>
+
+                </div>
+                <div>
+                    <label>İmza Tarihi:</label>
+                    <input id="demo" type="date" size="10">
+                </div>
+                <input type="button" value="Sözleşme Görüntüle" style="float:right;">
+            </fieldset>
+        </div>
+
+    </div>
+    <script src="./Scripts/sozlesme.js"></script>
+
+</body>
+
+</html>
