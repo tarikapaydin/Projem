@@ -7,7 +7,7 @@
 </head>
 <style>
     html {
-        background: url("./7.jpg") no-repeat center center fixed;
+        background: url("./Resimler/7.jpg") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -185,12 +185,18 @@
                 </div>
 
             </fieldset>
-            <input type="button" value="Sözleşme Görüntüle" onclick="myFunction(); changeText()">
+            <input type="button" value="Sözleşme Görüntüle" onclick="changeText()">
         </div>
 
     </div>
 
+    <br/>
+
     <div id="SzlMetni">
+
+        <input type="button" value="Sözleşmeyi Gizle" onclick="sozlesmeyiGizle()">
+        <br/>
+
         <h4>Müşteri No:
             <b id="musNo"></b>
         </h4>
@@ -437,7 +443,7 @@
         <br>
         <br>
     </div>
-    <div>
+    <div id="ucretTablosu">
         <table>
             <caption>EK-1</caption>
             <tr>
@@ -698,7 +704,7 @@
 
 
     </div>
-    <script src="./Scripts/yeni.js"></script>
+    <script src="./../Scripts/yeni.js"></script>
 
 
 
