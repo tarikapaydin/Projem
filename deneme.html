@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input type="text" id="boldStuff">
+
+    <input type="button" onclick="changeText()" value="Change Text" />
+    <p>cuara
+        <b id="c"></b>
+    </p>
+
+    <script type="text/javascript">
+        function changeText() {
+            document.getElementById("boldStuff").innerHTML = "Fred Flinstone";
+            document.getElementById("c").innerHTML = document.getElementById("boldStuff").value
+
+
+        }
+
+        function hide(id){
+            var divObject=document.getElementById(id);
+            divObject.style.display="none";
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
