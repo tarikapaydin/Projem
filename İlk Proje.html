@@ -7,7 +7,7 @@
 </head>
 <style>
     html {
-        background: url("./7.jpg") no-repeat center center fixed;
+        background: url("./4.jpg") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -43,7 +43,8 @@
         padding-right: 5px;
         padding-left: 2px;
         border-radius: 7px;
-        border: solid 2px rgba(62, 117, 129, 0.541)
+        border: solid 2px rgba(62, 117, 129, 0.541);
+        outline: none;
     }
 
     textarea {
@@ -62,6 +63,7 @@
 
     body {
         text-align: justify;
+        
     }
 
     table {
@@ -77,6 +79,31 @@
         text-align: center;
         padding: 6px;
 
+    }
+
+
+    #piton {
+        background-color: rgb(218, 13, 95);
+        font-size: 24px;
+        cursor: pointer;
+        outline: none;
+        color:rgb(255, 255, 255);
+        font-family: 'Times New Roman', Times, serif;
+        box-shadow: 0 9px rgba(216, 46, 114, 0.486);
+        border:none;
+      
+
+      }
+      #piton:hover {
+          background-color: orange;
+}  
+  #piton:active {
+      background-color:orangered;
+      box-shadow: 0 4px rgba(148, 32, 79, 0.486);
+      transform: translateY(4px);
+  }
+  
+  
     }
 </style>
 
@@ -185,7 +212,8 @@
                 </div>
 
             </fieldset>
-            <input type="button" value="Sözleşme Görüntüle" onclick="myFunction(); changeText()">
+            <br>
+            <input type="button" id="piton" value="Sözleşme Görüntüle" onclick="myFunction(); changeText()">
         </div>
 
     </div>
