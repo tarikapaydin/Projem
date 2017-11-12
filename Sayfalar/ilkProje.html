@@ -7,12 +7,14 @@
 </head>
 <style>
     html {
-        background: url("./Resimler/7.jpg") no-repeat center center fixed;
+        background: url("../Resimler/7.jpg") no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
     }
+
+
 
     header {
         color: black;
@@ -20,7 +22,7 @@
 
     body {
         color: black;
-        font-size: 25px;
+        font-size: 16px;
     }
 
     select {
@@ -37,17 +39,32 @@
 
     }
 
+    b,
+    span {
+        text-transform: capitalize;
+    }
+
     input {
         padding: 6px;
         float: right;
         padding-right: 5px;
         padding-left: 2px;
         border-radius: 7px;
-        border: solid 2px rgba(62, 117, 129, 0.541)
+        border: solid 2px rgba(62, 117, 129, 0.541);
+        outline: none;
+        text-transform: capitalize;
+
     }
 
     textarea {
         vertical-align: middle;
+        text-transform: capitalize;
+    }
+
+    @media print {
+        #printPageButton {
+            display: none;
+        }
     }
 
     #szlFormu {
@@ -78,10 +95,55 @@
         padding: 6px;
 
     }
+
+    .piton {
+        background-color: rgb(218, 13, 95);
+        font-size: 24px;
+        cursor: pointer;
+        outline: none;
+        color: rgb(255, 255, 255);
+        font-family: 'Times New Roman', Times, serif;
+        box-shadow: 0 7px rgba(216, 46, 114, 0.486);
+        border: none;
+        margin: 15px;
+    }
+
+    .piton1 {
+        background-color: darkcyan;
+        font-size: 24px;
+        cursor: pointer;
+        outline: none;
+        color: rgb(255, 255, 255);
+        font-family: 'Times New Roman', Times, serif;
+        box-shadow: 0 7px rgba(46, 216, 188, 0.486);
+        border: none;
+        margin: 15px;
+
+    }
+
+    .piton:hover {
+        background-color: orange;
+    }
+
+    .piton:active {
+        background-color: orangered;
+        box-shadow: 0 4px rgba(148, 32, 79, 0.486);
+        transform: translateY(5px);
+    }
+
+    .piton1:hover {
+        background-color: rgba(51, 140, 212, 0.692);
+    }
+
+    .piton1:active {
+        background-color: rgb(41, 76, 247);
+        box-shadow: 0 4px rgba(148, 32, 79, 0.486);
+        transform: translateY(5px);
+    }
 </style>
 
 <body>
-    <div id="szlFormu">
+    <div id="szlFormu" style="font-size:25px;">
         <header style="font-size:40px;">Sözleşme Menüsü</header>
 
 
@@ -90,7 +152,7 @@
             <legend>Müşteri Bilgileri</legend>
             <div>
                 <label>Müşteri No:</label>
-                <input type="text" id="inpmusNo" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+                <input type="number" id="inpmusNo" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
             </div>
             <div>
                 <label>Müşteri Adı:</label>
@@ -102,15 +164,15 @@
             </div>
             <div>
                 <label>Cep Tel. No:</label>
-                <input type="text" id="inpceptel" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+                <input type="number" id="inpceptel" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
             </div>
             <div>
                 <label>Tel.No:</label>
-                <input type="text" id="inptelno" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+                <input type="number" id="inptelno" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
             </div>
             <div>
                 <label>Posta Çeki:</label>
-                <input type="text" id="inppostaceki" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+                <input type="number" id="inppostaceki" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
             </div>
             <div>
                 <label>Vergi Dairesi/No:</label>
@@ -118,7 +180,7 @@
             </div>
             <div>
                 <label>Email:</label>
-                <input type="text" id="inpEmail" style="border-radius:7px; border:solid 2px rgba(62, 117, 129, 0.541)">
+                <input type="text" id="inpEmail" style="border-radius:7px; text-transform: none; border:solid 2px rgba(62, 117, 129, 0.541)">
             </div>
 
         </fieldset>
@@ -129,11 +191,11 @@
                 <legend>Sözleşme Özellikleri</legend>
                 <div>
                     <label>Sözleşme Başlangıç Tarihi:</label>
-                    <input type="text" id="inpbaslangic" size="15">
+                    <input type="number" id="inpbaslangic" size="15" >
                 </div>
                 <div>
                     <label>Sözleşme Bitiş Tarihi:</label>
-                    <input type="text" id="inpbitis" size="15">
+                    <input type="number" id="inpbitis" size="15">
                 </div>
                 <div>
                     <label>Ücret Tarifesi Değişiklikleri:</label>
@@ -147,7 +209,7 @@
                 <div>
                     <label>İndirim Oranı:</label>
                     <select id="inpindirimoranı">
-                        <option value="performansa Göre" selected>Performansa Göre</option>
+                        <option value="performansa esas" selected>Performansa Göre</option>
                         <option value="%10">%10</option>
                         <option value="%15">%15</option>
                         <option value="%20">%20</option>
@@ -185,17 +247,27 @@
                 </div>
 
             </fieldset>
-            <input type="button" value="Sözleşme Görüntüle" onclick="changeText()">
+            <input type="button" class="piton" value="Sözleşme Metni" onclick="changeText()">
+            <input type="button" class="piton1" onclick="window.location.href='./SozlesmeTablolar.html'" value="Ücret Tablosu">
         </div>
+        <br>
+        <br>
+        <p>
+            <b>Not:</b> Lütfen Gerekli bilgiler doldurulduktan sonra yazdırma işlemi için ilk olarak Sözleşme Metni butonuna
+            basınız.
+        </p>
 
     </div>
+
 
     <br/>
 
     <div id="SzlMetni">
 
-        <input type="button" value="Sözleşmeyi Gizle" onclick="sozlesmeyiGizle()">
-        <br/>
+
+        <button id="printPageButton" class="piton" onclick="window.print();">Print</button>
+
+
 
         <h4>Müşteri No:
             <b id="musNo"></b>
@@ -206,11 +278,11 @@
 
         <b>1-TARAFLAR</b>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;İş bu sözleşme, bir tarafta Bursa Ptt Pim Müdürlüğü ile diğer tarafta
-            <b id="adSoyad">BOSLUK</b> aşağıdaki şartlarla posta tekeli dışında kalan gönderilerin kargo olarak kabul, taşıma ve tesliminin
-            sağlanması amacıyla tanzim ve imza edilmiştir.</p>
+            <b id="adSoyad">LÜTFEN AD SOYAD GİRİLECEK</b> aşağıdaki şartlarla posta tekeli dışında kalan gönderilerin kargo olarak kabul,
+            taşıma ve tesliminin sağlanması amacıyla tanzim ve imza edilmiştir.</p>
 
         <p>&nbsp;&nbsp;&nbsp;&nbsp;Bundan böyle sözleşmede Bursa Ptt Pim Müdürlüğü - Ptt Başmüdürlüğü ve
-            <b id="adSoyad1"></b> "Gönderici" olarak anılacaktır.</p>
+            <b id="adSoyad1">LÜTFEN AD SOYAD GİRİLECEK</b> "Gönderici" olarak anılacaktır.</p>
 
         <b>2-TARAFLARA İLİŞKİN BİLGİLER</b>
         <br>
@@ -236,23 +308,23 @@
             <b> Göndericinin;</b>
             <br>
             <b>Tebligat adresi:</b>
-            <b id="gonAdresi"></b>
+            <span id="gonAdresi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <br>
             <b>Posta Çeki No:</b>
-            <b id="postaceki"></b>
+            <span id="postaceki"></span>
             <br>
             <b>Cep Tel No :</b>
-            <b id="ceptelno"></b>
+            <span id="ceptelno"></span>
             <br>
             <b>Tel No :</b>
-            <b id="telno"></b>
+            <span id="telno"></span>
             <br>
             <b>Vergi Dairesi ve No :</b>
-            <b id="vergi"></b>
+            <span id="vergi"></span>
             <b></b>
             <br>
             <b>Elektronik Posta Adresi :</b>
-            <b id="email"></b>
+            <span id="email"></span>
         </i>
         <br>
         <br>
@@ -270,9 +342,9 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taraflardan biri, sözleşmenin sona erme tarihinden en az 30
             gün önce sözleşmeyi sona erdirme talebini karşı tarafa yazılı olarak bildirmediği takdirde sözleşme aynı şartlarda
             (ücret hariç) bir yıl süreyle uzar.</p>
-        <br>
-        <br>
-        <br>
+
+
+
         <b>5-SÖZLEŞMENİN TÜRÜ VE BEDELİ</b>
 
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bu kısımda kabul edilecek aylık gönderi adedi, ağırlık/desi,
@@ -282,10 +354,11 @@
             uygulanmak suretiyle belirlenecek fiyat üzerinden gönderileri taşımayı kabul eder. Aps Kurye (0–2000 Gr/Desi),
             Posta Kargosu (2001-30000 Gr/Desi), Kargo (30001Gr(100desi) üzeri)’dir. Posta ve Telgraf Ücret Tarifesinde meydana
             gelebilecek değişiklikler fiyatlara
-            <b id="yansit"></b>.</p>
+            <b id="yansit" style="text-transform: none"></b>.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;İlgili kuruma Aps Kurye ve Posta Kargosunda aylık gönderim adedine göre
-            <b id="indirimoran"></b> iskonto uygulanacaktır.(EK:1 İskontolu Fiyat Tarifesi). Ancak 30 kg veya 100 ds üzerindeki gönderilerde
+            <b id="indirimoran" style="text-transform: capitalize"></b> iskonto uygulanacaktır.(EK:1 İskontolu Fiyat Tarifesi). Ancak 30 kg veya 100 ds üzerindeki gönderilerde
             uygulanacak indirim oranı en fazla % 30 dur.</p>
+
 
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gönderi adedi aylık
             <b id="aylik"></b>’den düşük veya yıllık
@@ -299,7 +372,7 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vergi Usul Kanunu’nun 231/5. maddesi gereği, kargo kabul işleminin yapıldığı
             tarihten itibaren en geç 7 gün içinde fatura düzenlenecektir (ücreti alıcıdan tahsil olanları hariç).</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ödemeler
-            <b id="periot"></b> olarak yapılacak olup PTT’nin 5133629 nolu Posta çeki hesabına ya da TR45 0001 0014 4300 0018 4046 48 nolu
+            <b id="periot" style="text-transform: capitalize"></b> olarak yapılacak olup PTT’nin 5133629 nolu Posta çeki hesabına ya da TR45 0001 0014 4300 0018 4046 48 nolu
             Ziraat Bankası IBAN numarası aracılığıyla (Resmi Daire olması durumunda Resmi Pulla) ödeme yapılabilir. Ancak
             ödemenin zamanında yapılmaması halinde müşterinin Posta Çeki Hesabından ve ya avans tutarından düşülerek tahsilsiz
             kalan alacak tahsil edilecektir. Ödenmesi gereken bedel, Türkiye Cumhuriyeti Merkez Bankasının kısa vadeli avanslar
@@ -400,310 +473,24 @@
             ve diğer PTT mevzuatı hükümleri geçerlidir. 4 sayfa, 16 madde ve 2 ekten ibaret işbu sözleşme 1 nüsha hazırlanmış
             olup, taraflar bu sözleşmenin tamamını okuduklarını ve anlaşmaya varmak suretiyle
             <b id="imza"></b> tarihinde imzaladıklarını kabul ve beyan ederler.</p>
-
-        <pre style="font-family:times new roman">
-    
-    
-    
-    
-    
-    
-    
-    
-            <b id="adsoyad2"></b>                                                                            Bursa PTT Başmüdürlüğü
-                                                                                                         Posta İşleme Merkez Müdürlüğü
-                                                                                                          Cengiz KAYA
-                                                                                                                              Müdür
-                                 
-                                 
-            
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </pre>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
-    <div id="ucretTablosu">
-        <table>
-            <caption>EK-1</caption>
-            <tr>
-                <th colspan="4">GÖNDERİ TÜRÜ VE AĞIRLIK KADEMELERİ</th>
-            </tr>
-            <tr>
-                <th rowspan="3">Posta Kargosu</th>
-                <th colspan="3">Yurtiçi</th>
-            </tr>
+        <div style="font-family:times new roman">
+            <b>
 
-
-            <tr>
-
-                <th rowspan="2">Ptt de Teslim</th>
-                <th colspan="2">Adreste Teslim</th>
-
-            </tr>
-            <tr>
-                <th>İL İÇİ</th>
-                <th>İL DIŞI</th>
-            </tr>
-            <tr>
-                <td>1000 grama kadar (1000 gr dahil)</td>
-                <td>9,00 TL</td>
-                <td>9,00 TL</td>
-                <td>12,50 TL</td>
-            </tr>
-            <tr>
-                <td>1001 gr'dan 2000 gr'a kadar (1001 ve 2000 gr dahil)
-                </td>
-                <td>12,00 TL</td>
-                <td>12,00 TL</td>
-                <td>14,00 TL</td>
-
-            </tr>
-            <tr>
-                <td>2001 gr'dan 3000 gr'a kadar (2001 ve 3000 gr dahil) 2,01DESİ'den 3,00 DESİ'ye kadar (2,01 ve 3,00 DESİ dahil)
-                </td>
-                <td>12,50 TL</td>
-                <td>12,50 TL</td>
-                <td>15,40 TL</td>
-
-            </tr>
-            <tr>
-                <td>3001 gr/3,01 DESİ'den (3001 gr ve 3,01 DESİ dahil) 30 kg/50 DESİ'ye kadar her bir kg/DESİ ve kesrinden
-                </td>
-                <td>1,40 TL</td>
-                <td rowspan="2">0,70TL</td>
-                <td>1,40 TL</td>
-
-            </tr>
-            <tr>
-                <td>50 DESİ'den 100 DESİ' ye kadar herbir DESİ ve kesrinden</td>
-                <td>1,10 TL</td>
-                <td>1,10 TL</td>
-            </tr>
-
-        </table>
-        <br>
-        <table>
-            <tr>
-                <th rowspan="3">Kargo
-                    <br> (Tarife, 01.09.2017 tarihinden itibaren geçerlidir.)</th>
-                <th colspan="3">Yurtiçi</th>
-            </tr>
-
-
-            <tr>
-
-                <th rowspan="2">Şehir İçi</th>
-                <th colspan="2">Şehirlerarası</th>
-
-            </tr>
-            <tr>
-                <th>Ptt de Teslim</th>
-                <th>Adreste Teslim</th>
-            </tr>
-            <tr>
-                <td>30 Kg</td>
-                <td>31,40 TL</td>
-                <td>50,30 TL</td>
-                <td>53,20 TL</td>
-            </tr>
-            <tr>
-                <td>
-                    30 kg'dan sonraki 50 kg'a kadar her bir kg ve kesrinden (50 kg dahil)
-                </td>
-                <td>0,65 TL</td>
-                <td>1,25 TL</td>
-                <td>1,25 TL</td>
-
-            </tr>
-            <tr>
-                <td>100 DESİ</td>
-                <td>80,40 TL</td>
-                <td>133,30 TL</td>
-                <td>136,20 TL</td>
-
-            </tr>
-            <tr>
-                <td>50 kg' dan sonraki her bir kg ve kesrinden</td>
-                <td>0,75 TL</td>
-                <td rowspan="2">1,00 TL</td>
-                <td rowspan="2">1,00 TL</td>
-            </tr>
-            <tr>
-                <td>100 DESİ' den sonraki her bir DESİ ve kesrinden</td>
-                <td>0,65 TL</td>
-            </tr>
-
-
-        </table>
-        <br>
-        <br>
-        <br>
-        <br>
-        <table>
-            <caption>EK-2</caption>
-            <tr>
-                <th colspan="7">YURTİÇİ TOPLU APS KURYE, POSTA KARGOSU VE KARGO ÜCRET İNDİRİM TARİFESİ AYLIK POSTAYA VERİLEN GÖNDERİLER
-                </th>
-            </tr>
-            <tr>
-                <td colspan="2"></td>
-                <td colspan="2"></td>
-                <td>APS KURYE veya POSTA KARGOSU</td>
-                <td>İÇERİSİNDE KİTAP, DERGİ, BROŞÜR, KATALOG BULUNAN APS KURYE veya POSTA KARGOSU</td>
-                <td>KARGO</td>
-            </tr>
-            <tr>
-                <th colspan="2">SAYISI (Adet)</th>
-                <th colspan="2">CİRO (TL)</th>
-                <th>İNDİRİM ORANI (%)</th>
-                <th>İNDİRİM ORANI (%)</th>
-                <th>İNDİRİM ORANI (%)</th>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>300</td>
-                <td>440</td>
-                <td>6600</td>
-                <td>10</td>
-                <td>10</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td>301</td>
-                <td>500</td>
-                <td>6601</td>
-                <td>11000</td>
-                <td>15</td>
-                <td>15</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>501</td>
-                <td>1000</td>
-                <td>11001</td>
-                <td>22000</td>
-                <td>20</td>
-                <td>20</td>
-                <td>20</td>
-
-            </tr>
-            <tr>
-                <td>1001</td>
-                <td>1500</td>
-                <td>22001</td>
-                <td>33000</td>
-                <td>25</td>
-                <td>25</td>
-                <td>25</td>
-            </tr>
-            <tr>
-                <td>1501</td>
-                <td>2000</td>
-                <td>33001</td>
-                <td>44000</td>
-                <td>30</td>
-                <td>30</td>
-                <td>30</td>
-            </tr>
-
-            <tr>
-                <td>2001</td>
-                <td>2500</td>
-                <td>44001</td>
-                <td>55000</td>
-                <td>35</td>
-                <td>35</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>2501</td>
-                <td>3000</td>
-                <td>55001</td>
-                <td>66000</td>
-                <td>40</td>
-                <td>40</td>
-                <td>30</td>
-            </tr>
-
-            <tr>
-                <td>3001</td>
-                <td>3500</td>
-                <td>66001</td>
-                <td>77000</td>
-                <td>45</td>
-                <td>45</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>3501</td>
-                <td>6000</td>
-                <td>77000</td>
-                <td>100000</td>
-                <td>50</td>
-                <td>50</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td>6001</td>
-                <td>Üzeri</td>
-                <td>100001</td>
-                <td>Üzeri</td>
-                <td>50</td>
-                <td>60</td>
-                <td>30</td>
-            </tr>
-
-
-
-        </table>
-        <h4>AÇIKLAMALAR:</h4>
-        <p>1- Tabloda yer alan adet ve ciro rakamları aylık olup adet veya ciro rakamlarının 12 ile çarpılması suretiyle yıllık
-            taahhüt alınabilecektir.
-            <br> 2- Aylık verilen taahhütlerde kabul edilen gönderi sayısının 20 adet veya ücret tutarının 440 TL'nin altında
-            kalması halinde indirim uygulanmaz. Yıllık verilen taahhütlerde kabul edilen gönderi sayısının 240 adet veya
-            ücret tutarının 5.280 TL'nin altında kalması halinde aylık 20 adet veya ücret tutarının 440 TL' nin altında kalan
-            aylar için indirim uygulanmaz, aynı anda 10 adetten az gönderi kabullerine ayrıca adresten alım ücreti taahhuk
-            ettirilir.
-            <br> 3- Ücreti alıcıdan tahsil özel hizmetiyle verilen gönderiler adet olarak değerlendirilecek olup, ciro olarak
-            verilen taahhütler dikkate alınmayacaktır.
-            <br> 4- Tabloda belirtilen aylık adet veya postaya verilen gönderilerin indirimsiz toplam ücreti (Ciro) karşılığındaki
-            indirim oranlarından hangisi yüksek ise o indirim oranı uygulanır.
-            <br> 5- Dini bayramlar ve yılbaşı ile anneler, babalar, sevgililer günü ve PTT'nin kuruluş yıldönümü olan 23 Ekim
-            gününden önceki 5 gün içinde postaya verilen yurtiçi APS Kurye ve posta kargosuna %10 indirim uygulanır. (Herhangi
-            bir indirimden faydalanan gönderilere ayrıca bu indirim uygulanmaz)
-            <br> 6- Kargolara (30 kg./100 DESİ üzeri) yapılacak indirim %30'dan fazla olamaz.
-            <br> 7- Sözleşmelerinde gönderi sayısı veya ciro taahhüt eden müşterilerin taahhütlerini yerine getirememeleri halinde
-            yukarıda yer alan tarifeye göre ücretlendirilir.
-            <br> 8- APS Kurye, Posta Kargosu ve Kargolar için müşterek yapılan sözleşmelerde adet veya ciro üzerinden uygulanacak
-            indirimin tespitinde kargo adedi veya cirosu dikkate alınacak, ancak kargolara uygulanacak indirim oranı %30'u
-            geçmeyecektir. Diğer gönderilere ise toplam adet ve ciro miktarına göre tabloda karşılık gelen indirim oranları
-            uygulanacaktır.
-            <br> 9- İndirimler APS Kurye, Posta Kargosu veya Kargo ücreti ile özel hizmet ücretleri toplamından KDV hariç hesaplanır.
-        </p>
-
+                <b id="adsoyad2"></b>
+                <label style="float:right; text-align:center;">Bursa PTT Başmüdürlüğü
+                    <br> Posta İşleme Merkez Müdürlüğü
+                    <br> Cengiz KAYA
+                    <br>Müdür</label>
+            </b>
+        </div>
 
     </div>
+    <footer style="float:bottom; ">
+        <p>By Tarık Cemil APAYDIN - Bursa Pim Müdürlüğü</p>
+    </footer>
+
     <script src="./../Scripts/yeni.js"></script>
 
 

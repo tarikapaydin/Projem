@@ -23,7 +23,7 @@ function changeText() {
 
     document.getElementById("szlFormu").style.display = "none";
     document.getElementById("SzlMetni").style.display = "block";
-    document.getElementById("ucretTablosu").style.display = "none";
+    document.getElementById("ucretTablosu").style.display = "block";
 };
 
 function sozlesmeyiGizle() {
